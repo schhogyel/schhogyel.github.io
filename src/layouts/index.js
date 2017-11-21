@@ -2,15 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import styled from "styled-components";
 
 import "./index.css";
 
+const SiteTitle = styled.h1`
+  font-size: 1.2rem;
+  color: #558c89;
+`;
+const Container = styled.div`
+  margin-bottom: 1.45rem;
+`;
 const Header = () => (
-  <div
-    style={{
-      marginBottom: "1.45rem"
-    }}
-  >
+  <Container>
+    <div
+      style={{
+        padding: ".25rem 1.0875rem",
+        backgroundColor: "#D9853B"
+      }}
+    />
     <div
       style={{
         margin: "0 auto",
@@ -18,18 +28,17 @@ const Header = () => (
         padding: "1.45rem 1.0875rem"
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <SiteTitle style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
             textDecoration: "none"
           }}
-        >
-          Invisible String
-        </Link>
-      </h1>
+        />
+        SimpleMinded
+      </SiteTitle>
     </div>
-  </div>
+  </Container>
 );
 
 const TemplateWrapper = ({ children, data }) => (

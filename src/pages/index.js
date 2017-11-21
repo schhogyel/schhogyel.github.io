@@ -1,23 +1,39 @@
 import React from "react";
 import Link from "gatsby-link";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const PageTitle = styled.h1`
+  font-size: 1.2rem;
+  color: #3b3738;
+`;
+const Title = styled.h3`
+  font-size: 1rem;
+  color: #3b3738;
+`;
+const Excerpt = styled.p`
+  font-size: 0.9rem;
+  color: #3b3738;
+`;
 
 export default ({ data }) => {
   return (
-    <div>
-      <h1>Articles</h1>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+    <Container>
+      <PageTitle>Articles</PageTitle>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
-            <h3>
-              {" "}
+            <Title>
               {node.frontmatter.title} <span> {node.frontmatter.date}</span>
-            </h3>
-            <p>{node.excerpt}</p>
+            </Title>
+            <Excerpt>{node.excerpt}</Excerpt>
           </Link>
         </div>
       ))}
-    </div>
+    </Container>
   );
 };
 
