@@ -4,7 +4,7 @@ import Link from "gatsby-link";
 export default ({ data }) => {
   return (
     <div>
-      <h1>Things fall apart</h1>
+      <h1>Articles</h1>
       <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>

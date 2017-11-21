@@ -13,7 +13,9 @@
     "gatsby-transformer-remark": "^1.7.21",
     "styled-components": "^2.2.3",
     "typography-theme-bootstrap": "^0.16.7",
-    "typography-theme-lawton": "^0.15.10"
+    "typography-theme-grand-view": "^0.15.10",
+    "typography-theme-lawton": "^0.15.10",
+    "typography-theme-st-annes": "^0.15.10"
   },
   "keywords": [
     "gatsby"
@@ -24,9 +26,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public --branch master"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "prettier": "^1.8.2"
   }
 }

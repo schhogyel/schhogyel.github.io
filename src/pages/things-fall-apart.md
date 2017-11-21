@@ -1,5 +1,5 @@
 ---
-title: "Things fall apart"
+title: "Getting to know GraphQL"
 date: "2017-11-17"
 ---
 
