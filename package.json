@@ -9,13 +9,15 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^2.0.2",
     "gatsby-plugin-typography": "^1.7.10",
+    "gatsby-remark-prismjs": "^1.2.9",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.21",
     "styled-components": "^2.2.3",
     "typography-theme-bootstrap": "^0.16.7",
     "typography-theme-grand-view": "^0.15.10",
     "typography-theme-lawton": "^0.15.10",
-    "typography-theme-st-annes": "^0.15.10"
+    "typography-theme-st-annes": "^0.15.10",
+    "typography-theme-sutro": "^0.15.10"
   },
   "keywords": [
     "gatsby"
