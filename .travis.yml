@@ -1,3 +1,7 @@
+language: node_js
+node_js:
+  - "8"
+cache: yarn
 deploy:
   provider: pages
   skip_cleanup: true
@@ -6,3 +10,11 @@ deploy:
     branch: source
   target_branch: master
   script: "yarn run deploy"
+before_script:
+  - "yarn global add gh-pages"
+  - "yarn global add gatsby"
+script:
+  - "yarn test"
+  - "yarn build:prod"
+after_success:
+  - "yarn deploy"
