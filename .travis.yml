@@ -4,10 +4,9 @@ node_js:
 cache: 
   yarn
 before_script:
-  - "yarn add gh-pages-with-token"
   - "yarn global add gatsby"
 script:
-  - "yarn deploy"
+  - "gatsby build"
 deploy:
   provider: pages
   skip_cleanup: true
