@@ -8,8 +8,7 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: source
-  target_branch: master
-  script: "yarn run deploy"
+target_branch: master
 before_script:
   - "yarn global add gh-pages"
   - "yarn global add gatsby"
