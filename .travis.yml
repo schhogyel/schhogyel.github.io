@@ -13,4 +13,4 @@ before_script:
   - "yarn global add gh-pages"
   - "yarn global add gatsby"
 script:
-  - "yarn deploy"
+  - "yarn deploy --token=${GITHUB_TOKEN}"
