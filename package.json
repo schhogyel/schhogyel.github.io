@@ -27,7 +27,7 @@
     "develop": "gatsby develop",
     "format":
       "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "deploy": "gatsby build && gh-pages -d public --branch master"
+    "deploy": "gatsby build && gh-pages-with-token -d public"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
