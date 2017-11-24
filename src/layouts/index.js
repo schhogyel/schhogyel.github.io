@@ -18,7 +18,7 @@ const SideBarContainer = styled.div`
 `;
 const Content = styled.div`
   flex: 4;
-  padding: 2.45rem;
+  padding: 0 2.45rem;
 `;
 const FooterContainer = styled.div`
   display: flex;

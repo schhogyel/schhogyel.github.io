@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+const ArticleTitle = styled.h1`
+  margin-top: 0;
+`;
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div>
-      <h1>{post.frontmatter.title}</h1>
+      <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   );

@@ -11,6 +11,7 @@ const Container = styled.div`
 const PageTitle = styled.h1`
   color: #3b3738;
   font-size: 7rem;
+  margin-top: 1.68rem;
 `;
 const Title = styled.h3`
   color: #3b3738;
