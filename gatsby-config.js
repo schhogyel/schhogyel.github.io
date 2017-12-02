@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `korgaling`,
+    title: `Korgaling`,
     slogan: `Eat Sleep Meditate Repeat`
   },
   plugins: [

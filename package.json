@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.17.1",
     "gatsby": "^1.9.110",
     "gatsby-link": "^1.6.27",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -19,18 +20,20 @@
     "typography-theme-st-annes": "^0.15.10",
     "typography-theme-sutro": "^0.15.10"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "build": "./node_modules/.bin/tailwind build ./src/index.tailwind.css -o ./src/layouts/index.css && gatsby build",
+    "develop": "./node_modules/.bin/tailwind build ./src/index.tailwind.css -o ./src/layouts/index.css && gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "deploy": "gatsby build && gh-pages-with-token -d public"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "tailwindcss": "^0.2.2"
   }
 }

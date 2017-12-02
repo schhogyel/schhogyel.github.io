@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import Header from "./Header";
+import Apod from "./Apod";
 require("prismjs/themes/prism-solarizedlight.css");
 
-//import "./index.css";
+import "./index.css";
 
 const SiteTitle = styled.h1`
   color: #558c89;
@@ -14,7 +16,6 @@ const SiteTitle = styled.h1`
 const Container = styled.div``;
 const SideBarContainer = styled.div`
   flex: 1;
-  background-color: #558c89;
 `;
 const Content = styled.div`
   flex: 4;
@@ -24,31 +25,7 @@ const FooterContainer = styled.div`
   display: flex;
   min-height: 200px;
 `;
-const Header = props => (
-  <Container>
-    <div
-      style={{
-        backgroundColor: "#D9853B"
-      }}
-    />
-    <div
-      style={{
-        margin: "0 auto",
-        maxWidth: 960
-      }}
-    >
-      <SiteTitle style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            textDecoration: "none"
-          }}
-        />
-        {props.title}
-      </SiteTitle>
-    </div>
-  </Container>
-);
+
 const Footer = () => <FooterContainer />;
 const SideBar = () => <SideBarContainer />;
 const Wrapper = styled.div`
@@ -66,6 +43,7 @@ const TemplateWrapper = ({ children, data }) => (
       ]}
     />
     <Header title={data.site.siteMetadata.title} />
+    <Apod />
     <Wrapper>
       <SideBar />
       <Content>{children()}</Content>

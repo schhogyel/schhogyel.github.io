@@ -49,20 +49,21 @@ const ReadMore = styled.button`
 
 export default ({ data }) => {
   return (
-    <Container>
-      <PageTitle>Articles</PageTitle>
+    <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Article key={node.id}>
+        <div key={node.id} className=" ">
           <Title>
             {node.frontmatter.title} <Date> {node.frontmatter.date}</Date>
           </Title>
           <Excerpt>{node.excerpt}</Excerpt>
           <Link to={node.fields.slug}>
-            <ReadMore primary>Read More</ReadMore>
+            <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold py-2 px-4 rounded">
+              Read More
+            </button>
           </Link>
-        </Article>
+        </div>
       ))}
-    </Container>
+    </div>
   );
 };
 
