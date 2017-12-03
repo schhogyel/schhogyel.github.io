@@ -1,5 +1,5 @@
 import Typography from "typography";
-import grandViewTheme from "typography-theme-grand-view";
-const typography = new Typography(grandViewTheme);
+import sutro from "typography-theme-sutro";
+const typography = new Typography(sutro);
 
 export default typography;

@@ -30,7 +30,7 @@ const SideBar = () => <SideBarContainer />;
 const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 92vw;
 `;
 const TemplateWrapper = ({ children, data }) => (
   <div>

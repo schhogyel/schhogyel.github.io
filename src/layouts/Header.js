@@ -13,8 +13,8 @@ const Header = props => (
     style={{ opacity: 0.95, position: "fixed", zIndex: 2, width: "100%" }}
   >
     <div className="container mx-auto flex items-center flex-no-shrink mr-6">
-      <Link to="/">
-        <span className="font-semibold text-xl tracking-tight text-white">
+      <Link className="hover:no-underline" to="/">
+        <span className="font-semibold text-xl tracking-tight text-white ">
           {props.title}
         </span>
       </Link>
