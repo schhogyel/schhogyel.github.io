@@ -4,7 +4,6 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Header from "./Header";
-import Apod from "./Apod";
 require("prismjs/themes/prism-solarizedlight.css");
 
 import "./index.css";
@@ -43,9 +42,7 @@ const TemplateWrapper = ({ children, data }) => (
       ]}
     />
     <Header title={data.site.siteMetadata.title} />
-    <Apod />
     <Wrapper>
-      <SideBar />
       <Content>{children()}</Content>
     </Wrapper>
     <Footer />

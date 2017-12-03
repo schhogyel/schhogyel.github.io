@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled, { css } from "styled-components";
+import Apod from "../components/Apod";
 
 const Container = styled.div`
   display: flex;
@@ -16,9 +17,12 @@ const PageTitle = styled.h1`
 const Title = styled.h3`
   color: #3b3738;
   text-align: center;
+  padding: 0.6rem 0;
 `;
 const Excerpt = styled.p`
   color: #3b3738;
+  padding: 1rem;
+  line-height: 1.25rem;
 `;
 const Date = styled.span`
   display: block;
@@ -49,15 +53,19 @@ const ReadMore = styled.button`
 
 export default ({ data }) => {
   return (
-    <div>
+    <div className="pt-8 mt-8">
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id} className=" ">
-          <Title>
-            {node.frontmatter.title} <Date> {node.frontmatter.date}</Date>
-          </Title>
+        <div key={node.id} className="flex flex-col items-center p-2 mb-4">
+          <div className="flex flex-col items-center p-2">
+            <Title>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            </Title>
+            <div className="p-2 font-thin"> {node.frontmatter.date}</div>
+          </div>
+
           <Excerpt>{node.excerpt}</Excerpt>
           <Link to={node.fields.slug}>
-            <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold py-2 px-4 rounded">
+            <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold my-4 py-2 px-4 rounded">
               Read More
             </button>
           </Link>
