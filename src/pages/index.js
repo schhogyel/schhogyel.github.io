@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import styled, { css } from "styled-components";
 import Apod from "../components/Apod";
+import TiTime from "react-icons/lib/md/access-time";
 
 const Container = styled.div`
   display: flex;
@@ -53,9 +54,9 @@ export default ({ data, transition }) => {
       <Apod />
       <div className="container mx-auto">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id} className="flex p-2 mb-4">
-            <div className="flex-auto" style={{ minWidth: "100px" }} />
-            <div className="flex flex-auto flex-col">
+          <div className="flex">
+            <div className="flex-auto px-4" style={{ minWidth: "200px" }} />
+            <div key={node.id} className="flex flex-col p-2 mb-4">
               <Title>
                 <Link
                   to={node.fields.slug}
@@ -64,20 +65,28 @@ export default ({ data, transition }) => {
                   {node.frontmatter.title}
                 </Link>
               </Title>
-
-              <Excerpt>
-                <span className="uppercase text-xs text-grey tracking-wide font-hairline">
-                  {node.frontmatter.date} -
-                </span>
-                {node.excerpt}
-              </Excerpt>
-              <Link to={node.fields.slug}>
-                <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold my-4 py-2 px-4 rounded">
-                  Read More
-                </button>
-              </Link>
+              <div className="flex">
+                <div className="flex flex-auto flex-col">
+                  <Excerpt>
+                    <span className="uppercase text-xs text-grey tracking-wide font-hairline">
+                      {node.frontmatter.date} -
+                    </span>
+                    {node.excerpt}
+                  </Excerpt>
+                  <Link to={node.fields.slug}>
+                    <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold my-4 py-2 px-4 rounded">
+                      Read More
+                    </button>
+                  </Link>
+                </div>
+                <div className="flex-auto p-4 " style={{ minWidth: "200px" }}>
+                  <TiTime className="text-red-light" />
+                  <span className="text-grey text-xs pl-2">
+                    {node.timeToRead} min read
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="flex-auto" style={{ minWidth: "200px" }} />
           </div>
         ))}
       </div>
@@ -100,6 +109,7 @@ export const query = graphql`
             slug
           }
           excerpt(pruneLength: 300)
+          timeToRead
         }
       }
     }

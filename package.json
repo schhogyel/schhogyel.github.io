@@ -13,6 +13,7 @@
     "gatsby-remark-prismjs": "^1.2.9",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-remark": "^1.7.21",
+    "react-icons": "^2.2.7",
     "react-transition-group": "^2.2.1",
     "styled-components": "^2.2.3",
     "typography-theme-bootstrap": "^0.16.7",
