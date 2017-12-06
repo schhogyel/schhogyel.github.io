@@ -3,6 +3,7 @@ import Link from "gatsby-link";
 import styled, { css } from "styled-components";
 import Apod from "../components/Apod";
 import TiTime from "react-icons/lib/md/access-time";
+import Loader from "react-loader";
 
 const Container = styled.div`
   display: flex;
@@ -54,9 +55,9 @@ export default ({ data, transition }) => {
       <Apod />
       <div className="container mx-auto">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div className="flex">
+          <div key={node.id} className="flex">
             <div className="flex-auto px-4" style={{ minWidth: "200px" }} />
-            <div key={node.id} className="flex flex-col p-2 mb-4">
+            <div className="flex flex-col p-2 mb-4">
               <Title>
                 <Link
                   to={node.fields.slug}
