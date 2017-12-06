@@ -47,9 +47,10 @@ const ReadMore = styled.button`
     `};
 `;
 
-export default ({ data }) => {
+export default ({ data, transition }) => {
   return (
-    <div className="pt-8 mt-8">
+    <div style={transition && transition.style}>
+      <Apod />
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id} className="flex p-2 mb-4">
           <div className="flex-auto" style={{ minWidth: "100px" }} />

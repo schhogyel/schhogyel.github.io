@@ -16,10 +16,7 @@ const Container = styled.div``;
 const SideBarContainer = styled.div`
   flex: 1;
 `;
-const Content = styled.div`
-  flex: 4;
-  padding: 0 2.45rem;
-`;
+const Content = styled.div``;
 const FooterContainer = styled.div`
   display: flex;
   min-height: 200px;
@@ -42,9 +39,9 @@ const TemplateWrapper = ({ children, data }) => (
       ]}
     />
     <Header title={data.site.siteMetadata.title} />
-    <Wrapper>
-      <Content>{children()}</Content>
-    </Wrapper>
+
+    <Content>{children()}</Content>
+
     <Footer />
   </div>
 );

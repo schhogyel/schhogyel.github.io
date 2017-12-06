@@ -9,10 +9,10 @@ const SiteTitle = styled.h1`
 
 const Header = props => (
   <nav
-    className="flex items-center justify-between flex-wrap bg-indigo-dark p-6"
+    className="flex items-center justify-between flex-wrap bg-indigo-darker p-6"
     style={{ opacity: 0.95, position: "fixed", zIndex: 2, width: "100%" }}
   >
-    <div className="container mx-auto flex items-center flex-no-shrink mr-6">
+    <div className="container mx-auto flex items-center flex-no-shrink">
       <Link className="hover:no-underline" to="/">
         <span className="font-semibold text-xl tracking-tight text-white ">
           {props.title}
