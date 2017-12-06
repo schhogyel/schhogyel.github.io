@@ -74,8 +74,8 @@ export default ({ data, transition }) => {
                     {node.excerpt}
                   </Excerpt>
                   <Link to={node.fields.slug}>
-                    <button className="bg-indigo-light hover:bg-indigo-dark text-white font-bold my-4 py-2 px-4 rounded">
-                      Read More
+                    <button className="underline text-indigo-light font-sans font-bold my-3">
+                      Read More...
                     </button>
                   </Link>
                 </div>
