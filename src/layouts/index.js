@@ -50,8 +50,12 @@ class TemplateWrapper extends React.Component {
         <Helmet
           title={this.props.data.site.siteMetadata.title}
           meta={[
-            { name: "description", content: "My Personal Blog" },
-            { name: "keywords", content: "personal, experiences" }
+            {
+              name: "description",
+              content: "Emaho: Eat Sleep Meditate Repeat"
+            },
+            { name: "keywords", content: "personal, experiences" },
+            { name: "viewport", content: "width=device-width, initial-scale=1" }
           ]}
         />
         <Header

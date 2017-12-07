@@ -38,13 +38,13 @@ class Apod extends React.Component {
               style={{ objectFit: "cover" }}
             />
             <div
-              className="absolute pin-l text-white p-4"
+              className="absolute pin-l text-white md:p-4 text-xs"
               style={{ bottom: "1%" }}
             >
-              {this.state.apod.title}{" "}
+              {this.state.apod.title}
             </div>
             <div
-              className="absolute pin-r text-white p-4 text-xs"
+              className="absolute pin-r text-white md:p-4 text-xs"
               style={{ bottom: "1%" }}
             >
               &copy; {this.state.apod.copyright}

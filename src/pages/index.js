@@ -55,7 +55,7 @@ export default ({ data, transition }) => {
       <Apod />
       <div className="container mx-auto">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id} className="flex">
+          <div key={node.id} className="flex flex-col p-2 lg:flex-row">
             <div className="flex-auto px-4" style={{ minWidth: "200px" }} />
             <div className="flex flex-col p-2 mb-4">
               <Title>
@@ -66,8 +66,8 @@ export default ({ data, transition }) => {
                   {node.frontmatter.title}
                 </Link>
               </Title>
-              <div className="flex">
-                <div className="flex flex-auto flex-col">
+              <div className="flex flex-col md:flex-row">
+                <div className="flex flex-auto flex-col order-1 md:order-0">
                   <Excerpt>
                     <span className="uppercase text-xs text-grey tracking-wide font-hairline">
                       {node.frontmatter.date} -
@@ -75,12 +75,15 @@ export default ({ data, transition }) => {
                     {node.excerpt}
                   </Excerpt>
                   <Link to={node.fields.slug}>
-                    <button className="underline text-indigo-light font-sans font-bold my-3">
+                    <button className="underline text-indigo-light font-sans font-bold py-1">
                       Read More...
                     </button>
                   </Link>
                 </div>
-                <div className="flex-auto p-4 " style={{ minWidth: "200px" }}>
+                <div
+                  className="flex-auto py-2 order-0 md:order-1 md:p-4"
+                  style={{ minWidth: "200px" }}
+                >
                   <TiTime className="text-red-light" />
                   <span className="text-grey text-xs pl-2">
                     {node.timeToRead} min read
