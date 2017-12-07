@@ -59,7 +59,7 @@ class TemplateWrapper extends React.Component {
           clickHandler={this.clickHandler}
           hamburgerOpen={this.state.hamburgerOpen}
         />
-        <NavDrawer />
+        <NavDrawer hamburgerOpen={this.state.hamburgerOpen} />
 
         <Content>{this.props.children()}</Content>
 

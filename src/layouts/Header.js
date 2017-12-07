@@ -53,7 +53,12 @@ class Header extends React.Component {
     return (
       <nav
         className="flex items-center justify-between flex-wrap bg-indigo-darker p-6"
-        style={{ opacity: 0.95, position: "fixed", zIndex: 2, width: "100%" }}
+        style={{
+          opacity: 0.95,
+          position: "fixed",
+          zIndex: 1000,
+          width: "100%"
+        }}
       >
         <div className="container mx-auto flex items-center flex-no-shrink">
           <Hamburger onClick={this.props.clickHandler}>
