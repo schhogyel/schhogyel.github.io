@@ -7,6 +7,7 @@ import Header from "./Header";
 require("prismjs/themes/prism-solarizedlight.css");
 
 import "./index.css";
+import { NavDrawer } from "../components/NavDrawer";
 
 const SiteTitle = styled.h1`
   color: #558c89;
@@ -29,22 +30,44 @@ const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 92vw;
 `;
-const TemplateWrapper = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: "description", content: "My Personal Blog" },
-        { name: "keywords", content: "personal, experiences" }
-      ]}
-    />
-    <Header title={data.site.siteMetadata.title} />
+class TemplateWrapper extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      hamburgerOpen: false
+    };
+    this.clickHandler = this.clickHandler.bind(this);
+  }
 
-    <Content>{children()}</Content>
+  clickHandler() {
+    this.setState({
+      hamburgerOpen: !this.state.hamburgerOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Helmet
+          title={this.props.data.site.siteMetadata.title}
+          meta={[
+            { name: "description", content: "My Personal Blog" },
+            { name: "keywords", content: "personal, experiences" }
+          ]}
+        />
+        <Header
+          title={this.props.data.site.siteMetadata.title}
+          clickHandler={this.clickHandler}
+          hamburgerOpen={this.state.hamburgerOpen}
+        />
+        <NavDrawer />
 
-    <Footer />
-  </div>
-);
+        <Content>{this.props.children()}</Content>
+
+        <Footer />
+      </div>
+    );
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func

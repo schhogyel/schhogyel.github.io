@@ -49,19 +49,6 @@ const HamburgerSpan = styled.span`
 `;
 
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      hamburgerOpen: false
-    };
-    this.clickHandler = this.clickHandler.bind(this);
-  }
-
-  clickHandler() {
-    this.setState({
-      hamburgerOpen: !this.state.hamburgerOpen
-    });
-  }
   render() {
     return (
       <nav
@@ -69,14 +56,10 @@ class Header extends React.Component {
         style={{ opacity: 0.95, position: "fixed", zIndex: 2, width: "100%" }}
       >
         <div className="container mx-auto flex items-center flex-no-shrink">
-          <Hamburger
-            onClick={this.clickHandler}
-            innerRef={x => this.hamburger}
-            open={this.state.hamburgerOpen}
-          >
-            <HamburgerSpan one open={this.state.hamburgerOpen} />
-            <HamburgerSpan two open={this.state.hamburgerOpen} />
-            <HamburgerSpan three open={this.state.hamburgerOpen} />
+          <Hamburger onClick={this.props.clickHandler}>
+            <HamburgerSpan one open={this.props.hamburgerOpen} />
+            <HamburgerSpan two open={this.props.hamburgerOpen} />
+            <HamburgerSpan three open={this.props.hamburgerOpen} />
           </Hamburger>
           <Link className="hover:no-underline" to="/">
             <span className="font-semibold text-xl tracking-tight text-white ">
