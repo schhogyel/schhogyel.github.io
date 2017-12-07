@@ -52,7 +52,7 @@ class Header extends React.Component {
   render() {
     return (
       <nav
-        className="flex items-center justify-between flex-wrap bg-indigo-darker p-6"
+        className="flex items-center flex-wrap bg-indigo-darker p-6"
         style={{
           opacity: 0.95,
           position: "fixed",
@@ -60,12 +60,12 @@ class Header extends React.Component {
           width: "100%"
         }}
       >
-        <div className="container mx-auto flex items-center flex-no-shrink">
-          <Hamburger onClick={this.props.clickHandler}>
-            <HamburgerSpan one open={this.props.hamburgerOpen} />
-            <HamburgerSpan two open={this.props.hamburgerOpen} />
-            <HamburgerSpan three open={this.props.hamburgerOpen} />
-          </Hamburger>
+        <Hamburger onClick={this.props.clickHandler}>
+          <HamburgerSpan one open={this.props.hamburgerOpen} />
+          <HamburgerSpan two open={this.props.hamburgerOpen} />
+          <HamburgerSpan three open={this.props.hamburgerOpen} />
+        </Hamburger>
+        <div className="flex items-start justify-start px-4">
           <Link className="hover:no-underline" to="/">
             <span className="font-semibold text-xl tracking-tight text-white ">
               {this.props.title}
