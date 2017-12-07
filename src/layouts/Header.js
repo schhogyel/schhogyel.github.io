@@ -34,11 +34,11 @@ const HamburgerSpan = styled.span`
   transition: 0.25s ease-in-out;
   transform-origin: left center;
   top: ${props => {
-    if (props.one && open) {
+    if (props.one && props.open) {
       return "-1px";
     } else if (props.one) {
       return "0";
-    } else if (props.three && open) {
+    } else if (props.three && props.open) {
       return "22px";
     } else if (props.two) {
       return "10px";
