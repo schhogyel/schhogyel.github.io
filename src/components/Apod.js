@@ -30,15 +30,27 @@ class Apod extends React.Component {
   render() {
     return (
       <Transition in={this.props.inProp} timeout={duration}>
-        <div>
-          <Loader loaded={this.state.loaded}>
+        <Loader loaded={this.state.loaded}>
+          <div className="relative h-screen">
             <img
-              className="w-screen h-screen"
+              className="w-screen h-screen relative"
               src={this.state.apod.url}
               style={{ objectFit: "cover" }}
             />
-          </Loader>
-        </div>
+            <div
+              className="absolute pin-l text-white p-4"
+              style={{ bottom: "1%" }}
+            >
+              {this.state.apod.title}{" "}
+            </div>
+            <div
+              className="absolute pin-r text-white p-4 text-xs"
+              style={{ bottom: "1%" }}
+            >
+              &copy; {this.state.apod.copyright}
+            </div>
+          </div>
+        </Loader>
       </Transition>
     );
   }
