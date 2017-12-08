@@ -4,7 +4,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Header from "./Header";
-require("prismjs/themes/prism-solarizedlight.css");
+require("./prism-tommorow.css");
 
 import "./index.css";
 import { NavDrawer } from "../components/NavDrawer";
